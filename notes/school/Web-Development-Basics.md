@@ -8,19 +8,21 @@
 # 目录
 
 - [目录](#目录)
-- [Web前端技术及其发展](#web前端技术及其发展)
-- [Java EE开发环境](#java-ee开发环境)
-  - [IDEA 2023](#idea-2023)
-  - [常用快捷操作](#常用快捷操作)
-- [Web前端基础](#web前端基础)
-  - [HTMLAndCSS项目](#htmlandcss项目)
-  - [JavaScriptAndjQuery项目](#javascriptandjquery项目)
-    - [代码学习](#代码学习)
-    - [知识点](#知识点)
-  - [jQuery Ajax项目 — douban](#jquery-ajax项目--douban)
+- [1. Web前端技术及其发展](#1-web前端技术及其发展)
+- [2. Java EE开发环境](#2-java-ee开发环境)
+  - [2.1 IDEA 2023](#21-idea-2023)
+  - [2.2 常用快捷操作](#22-常用快捷操作)
+- [3. Web前端基础](#3-web前端基础)
+  - [3.1 HTMLAndCSS项目](#31-htmlandcss项目)
+  - [3.2 JavaScriptAndjQuery项目](#32-javascriptandjquery项目)
+    - [3.2.1 知识点](#321-知识点)
+    - [3.2.2 代码学习](#322-代码学习)
+  - [3.3 jQuery Ajax项目 — douban](#33-jquery-ajax项目--douban)
+    - [3.3.1 知识点](#331-知识点)
+    - [3.3.2 代码学习](#332-代码学习)
 
 
-# Web前端技术及其发展
+# 1. Web前端技术及其发展
 
 1. **网络应用体系结构演变：**
    - 传统`C/S`（客户端/服务端）架构向`B/S`（浏览器/服务端）架构的演变。
@@ -53,9 +55,9 @@
 >
 ---
 
-# Java EE开发环境
+# 2. Java EE开发环境
 
-## IDEA 2023
+## 2.1 IDEA 2023
 
 1. **IntelliJ IDEA概述：**
    - `IntelliJ IDEA`是由`JetBrains`公司开发的集成开发环境（`IDE`）。
@@ -85,7 +87,7 @@
 >
 ---
 
-## 常用快捷操作
+## 2.2 常用快捷操作
 
 1. **双击选词：** 通过双击可以选择一个单词。
 2. **`Ctrl+C`：** 复制选中的内容。
@@ -110,7 +112,7 @@
 >
 ---
 
-# Web前端基础
+# 3. Web前端基础
 
 `Web`前端基础主要涵盖`HTML5`、`CSS3`以及`客户端脚本`等部分：
 
@@ -137,7 +139,7 @@
 
 ---
 
-## HTMLAndCSS项目
+## 3.1 HTMLAndCSS项目
 
 项目地址：[HTMLAndCSS项目](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/HTMLAndCSS)
 
@@ -186,7 +188,7 @@
 
 ---
 
-## JavaScriptAndjQuery项目
+## 3.2 JavaScriptAndjQuery项目
 
 项目地址：[JavaScriptAndjQuery项目](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/JavaScriptAndjQuery)
 
@@ -194,7 +196,60 @@
 
 ![image-20231227205918033](images/Web-Development-Basics/image-20231227205918033.png)
 
-### 代码学习
+### 3.2.1 知识点
+
+1. **客户端脚本：**
+   - 客户端脚本能够被浏览器程序解释执行，用于实现交互效果或动态效果。
+   - 有原生`JavaScript`和`jQuery`库两种使用方式。
+   - 在页面中使用成对的`<script>…</script>`标签定义客户端脚本。
+   - 在客户端脚本中，可以使用浏览器对象或JavaScript内置对象。
+
+2. **jQuery库：**
+   - 引入`jQuery`库后，可以使用`$(选择器)`将页面元素对象转换成`jQuery`对象。
+   - `jQuery`是原生`JavaScript`的脚本库，简化了`DOM`操作、事件处理和`AJAX`等操作。
+
+3. **Web存储（localStorage和sessionStorage）：**
+   - `HTML5`对`window`对象增加了属性`localStorage`和`sessionStorage`，以及方法`openDatabase()`，是客户端存储数据的一种新方式，统称为Web存储。
+   - `localStorage`用于永久存储数据，可被同一域名下的所有页面访问。
+   - `sessionStorage`用于在当前会话期间存储数据，在浏览器会话结束时会被自动清除。
+   - 这两者常用于浏览器会话存储，`JWT`（`JSON Web Token`）技术也需要使用`sessionStorage`对象。
+
+4. **Web存储的常用方法：**
+   - `setItem(key, value)`：向存储添加一个键值对。
+   - `getItem(key)`：从存储中获取键名对应的值。
+   - `removeItem(key)`：从存储中移除键名对应的键值对。
+
+5. **JavaScript基本数据类型：**
+   - 数值（`number`）、字符串（`string`）、逻辑真与假（`boolean`）、未定义（`undefined`）、空值（`null`）。
+   - J`avaScript`是一种弱类型语言，变量的数据类型可以在运行时动态地改变。
+
+6. **let和const：**
+   - `ES6`引入的新特性，解决了使用`var`时存在的一些问题。
+   - `let`用于声明变量，可被重新赋值。
+   - `const`用于声明常量，一旦赋值就不能再改变。
+
+7. **对象类型和引用传递：**
+   - J`avaScript`可以使用对象类型（`object`），其赋值操作是按引用传递的。
+   - 数组和函数也属于对象类型，具有属性和方法。
+   - 对象是基于原型（`prototype`）的，而不是基于类。
+   - `JavaScript`内置的原型对象有`Date`、`Array`、`String`和`Math`等，其中前三需要使用`new`创建其实例。
+
+8. **浏览器对象：**
+   - 在客户端脚本编程中，通常会使用浏览器对象，如`window`、`document`和`location`等。
+
+9. **调试和错误处理：**
+   - 代码错误时，可以使用`console.log(var)`在控制台输出信息。
+   - 打开浏览器调试工具，查看控制台Console里的错误信息。
+
+10. **前后端分离项目开发：**
+   - 可以使用`jQuery Ajax`简化前后端交互。
+
+> [返回目录 ↑ ](#目录)
+
+---
+
+
+### 3.2.2 代码学习
 
 首先，`index.html` 页面中有一个元素：
 
@@ -331,57 +386,39 @@ window.setInterval(displayDateAndTime, 1000)
 > 
 ---
 
-### 知识点
 
-1. **客户端脚本：**
-   - 客户端脚本能够被浏览器程序解释执行，用于实现交互效果或动态效果。
-   - 有原生`JavaScript`和`jQuery`库两种使用方式。
-   - 在页面中使用成对的`<script>…</script>`标签定义客户端脚本。
-   - 在客户端脚本中，可以使用浏览器对象或JavaScript内置对象。
+## 3.3 jQuery Ajax项目 — douban
 
-2. **jQuery库：**
-   - 引入`jQuery`库后，可以使用`$(选择器)`将页面元素对象转换成`jQuery`对象。
-   - `jQuery`是原生`JavaScript`的脚本库，简化了`DOM`操作、事件处理和`AJAX`等操作。
+项目地址：[jQuery Ajax项目 — douban](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/douban)
 
-3. **Web存储（localStorage和sessionStorage）：**
-   - `HTML5`对`window`对象增加了属性`localStorage`和`sessionStorage`，以及方法`openDatabase()`，是客户端存储数据的一种新方式，统称为Web存储。
-   - `localStorage`用于永久存储数据，可被同一域名下的所有页面访问。
-   - `sessionStorage`用于在当前会话期间存储数据，在浏览器会话结束时会被自动清除。
-   - 这两者常用于浏览器会话存储，`JWT`（`JSON Web Token`）技术也需要使用`sessionStorage`对象。
 
-4. **Web存储的常用方法：**
-   - `setItem(key, value)`：向存储添加一个键值对。
-   - `getItem(key)`：从存储中获取键名对应的值。
-   - `removeItem(key)`：从存储中移除键名对应的键值对。
+主页效果：
 
-5. **JavaScript基本数据类型：**
-   - 数值（`number`）、字符串（`string`）、逻辑真与假（`boolean`）、未定义（`undefined`）、空值（`null`）。
-   - J`avaScript`是一种弱类型语言，变量的数据类型可以在运行时动态地改变。
+![image-20231227224438006](images/Web-Development-Basics/image-20231227224438006.png)
 
-6. **let和const：**
-   - `ES6`引入的新特性，解决了使用`var`时存在的一些问题。
-   - `let`用于声明变量，可被重新赋值。
-   - `const`用于声明常量，一旦赋值就不能再改变。
+### 3.3.1 知识点
 
-7. **对象类型和引用传递：**
-   - J`avaScript`可以使用对象类型（`object`），其赋值操作是按引用传递的。
-   - 数组和函数也属于对象类型，具有属性和方法。
-   - 对象是基于原型（`prototype`）的，而不是基于类。
-   - `JavaScript`内置的原型对象有`Date`、`Array`、`String`和`Math`等，其中前三需要使用`new`创建其实例。
+1. **Ajax（Asynchronous JavaScript and XML）:**
+   - `Ajax`是一种使用`JavaScript`的异步请求和响应机制。
+   - 它允许在不刷新整个页面的情况下，通过局部更新页面的内容来实现动态加载数据，提高用户体验。
 
-8. **浏览器对象：**
-   - 在客户端脚本编程中，通常会使用浏览器对象，如`window`、`document`和`location`等。
+2. **jQuery Ajax:**
+   - `jQuery Ajax`提供了简化`Ajax`使用的方法`$.ajax()`，使得异步请求更加方便。
+   - 通过使用`jQuery Ajax`，可以更容易地处理各种`Ajax`请求和处理响应。
 
-9. **调试和错误处理：**
-   - 代码错误时，可以使用`console.log(var)`在控制台输出信息。
-   - 打开浏览器调试工具，查看控制台Console里的错误信息。
+3. **JSON（JavaScript Object Notation）:**
+   - JSON是一种轻量级的数据交换格式，使用键值对的方式来表示数据。
+   - 独立于编程语言，易于阅读和编写，并能够被大多数编程语言轻松处理。
+   - 使用大括号{}表示对象，方括号[]表示数组，键名必须使用双引号""括起来。
 
-10. **前后端分离项目开发：**
-   - 可以使用`jQuery Ajax`简化前后端交互。
+4. **豆瓣电影网站和API:**
+   - 访问豆瓣电影网站（https://movie.douban.com/），选择电影后可以得到电影的id（观察浏览器地址栏的subject参数）。
+   - 通过访问https://movie.querydata.org/api?id=10606004，可以获取电影相关信息的JSON格式数据。
 
-> [返回目录 ↑ ](#目录)
+5. **Postwoman:**
+   - Postwoman是一个用于测试API的工具，可用于测试豆瓣的后台接口并格式化返回的数据信息。
 
----
+6. **JSON在线解析:**
+   - 网站https://www.json.cn提供了在线解析JSON数据的服务，以折叠式方式查看数据信息，有助于直观地了解JSON结构。
 
-## jQuery Ajax项目 — douban
-
+### 3.3.2 代码学习
