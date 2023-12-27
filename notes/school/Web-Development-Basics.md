@@ -168,6 +168,8 @@
 
 ## JavaScriptAndjQuery
 
+项目地址：[JavaScriptAndjQuery项目](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/JavaScriptAndjQuery)
+
 项目主页：
 
 ![image-20231227205918033](images/Web-Development-Basics/image-20231227205918033.png)
