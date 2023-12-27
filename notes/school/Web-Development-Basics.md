@@ -426,3 +426,81 @@ window.setInterval(displayDateAndTime, 1000)
 打开项目中的`useJson.html`页面，效果如下：
 
 ![image-20231227225736781](images/Web-Development-Basics/image-20231227225736781.png)
+
+> 该项目实现了一个简单的电影信息查询功能。
+
+首先，使用HTML标签定义页面元素，包括文本输入框、标题、海报和描述：
+
+```html
+请输入豆瓣电影id：<input type="text" id="idFieId" value="10606004" />
+<div id="filmTitle">电影名称</div>
+<img id="poster" alt="电影海报" />
+<div id="filmDescription">电影描述</div>
+```
+
+接着老样子，引入jQuery库：
+
+```html
+<script src="js/jquery-1.10.2.min.js"></script>
+<script>
+   // js代码...
+</script>
+```
+
+下面我们来看JS代码。
+
+首先，我们使用了`jQuery`的选择器来获取`HTML`中的不同元素，并将它们存储在相应的变量中，以便后续操作。
+
+```JavaScript
+let idFieId = $("#idFieId");                    // 获取文本输入框
+let filmTitle = $("#filmTitle");                // 获取电影标题元素
+let poster = $("#poster");                      // 获取电影海报元素
+let filmDescription = $("#filmDescription");    // 获取电影描述元素
+```
+
+下面这个代码，用于页面初始化加载时通过 `getFilmInformation` 方法获取电影信息。同时，监听文本输入框的按键事件，当按下回车键时，同样调用 `getFilmInformation` 方法获取电影信息。
+
+```JavaScript
+let idv = idFieId.val();
+getFilmInformation(idv);            // 初始加载页面时获取电影信息
+
+idFieId.keyup(function (event) {    // 监听文本输入框按键事件
+   if (event.keyCode == 13) {       // 如果按下的是回车键
+      id = idFieId.val();           // 获取输入框中的电影ID
+      getFilmInformation(id);       // 调用获取电影信息的方法
+   }
+});
+```
+
+下面就是`getFilmInformation()`方法的具体实现，该方法用于编写获取电影信息的`AJAX`请求：
+
+```JavaScript
+function getFilmInformation(idv) {
+   $.ajax({
+      url: "https://movie.querydata.org/api",
+      data: {
+            id: idv,  // 设置请求参数
+      },
+      success: function (response) {  // 当请求成功时的处理方法
+            console.log("成功响应");
+            filmTitle.text(response.originalName);  // 更新电影标题
+            poster.attr("src", response.data[0].poster);  // 更新电影海报
+            filmDescription.html(response.data[0].description);  // 更新电影描述
+      },
+      error: function () {  // 当请求出错时的处理方法
+            alert("请求的服务接口没有正常响应！\n豆瓣后台接口限制频繁访问，两次请求之间的时间间隔大约需要半分钟。");
+      }
+   });
+}
+```
+
+在这一部分，我们使用了`jQuery`的 `ajax` 方法发起异步请求。通过指定 `url` 和 `data` 参数，向豆瓣的电影查询接口发送请求。在请求成功时，通过回调函数处理返回的数据，更新页面上的电影标题、海报和描述。如果请求出错，弹出警告提示。
+
+> - **工作原理**：
+>
+> 当用户输入豆瓣电影的`ID`并点击回车键或按回车键时，`getFilmInformation()`方法会向后端服务器发送请求，请求参数为`id`。后端服务器会根据`id`查询电影信息，并返回给前端页面。前端页面会将后端服务器返回的信息设置到页面元素上，完成电影信息的显示。
+
+![image-20231227233437223](images/Web-Development-Basics/image-20231227233437223.png)
+
+![image-20231227233657401](images/Web-Development-Basics/image-20231227233657401.png)
+
