@@ -191,3 +191,51 @@
 项目主页：
 
 ![image-20231227205918033](images/Web-Development-Basics/image-20231227205918033.png)
+
+知识点：
+
+1. **客户端脚本：**
+   - 客户端脚本能够被浏览器程序解释执行，用于实现交互效果或动态效果。
+   - 有原生`JavaScript`和`jQuery`库两种使用方式。
+   - 在页面中使用成对的`<script>…</script>`标签定义客户端脚本。
+   - 在客户端脚本中，可以使用浏览器对象或JavaScript内置对象。
+
+2. **jQuery库：**
+   - 引入`jQuery`库后，可以使用`$(选择器)`将页面元素对象转换成`jQuery`对象。
+   - `jQuery`是原生`JavaScript`的脚本库，简化了`DOM`操作、事件处理和`AJAX`等操作。
+
+3. **Web存储（localStorage和sessionStorage）：**
+   - `HTML5`对`window`对象增加了属性`localStorage`和`sessionStorage`，以及方法`openDatabase()`，是客户端存储数据的一种新方式，统称为Web存储。
+   - `localStorage`用于永久存储数据，可被同一域名下的所有页面访问。
+   - `sessionStorage`用于在当前会话期间存储数据，在浏览器会话结束时会被自动清除。
+   - 这两者常用于浏览器会话存储，`JWT`（`JSON Web Token`）技术也需要使用`sessionStorage`对象。
+
+4. **Web存储的常用方法：**
+   - `setItem(key, value)`：向存储添加一个键值对。
+   - `getItem(key)`：从存储中获取键名对应的值。
+   - `removeItem(key)`：从存储中移除键名对应的键值对。
+
+5. **JavaScript基本数据类型：**
+   - 数值（`number`）、字符串（`string`）、逻辑真与假（`boolean`）、未定义（`undefined`）、空值（`null`）。
+   - J`avaScript`是一种弱类型语言，变量的数据类型可以在运行时动态地改变。
+
+6. **let和const：**
+   - `ES6`引入的新特性，解决了使用`var`时存在的一些问题。
+   - `let`用于声明变量，可被重新赋值。
+   - `const`用于声明常量，一旦赋值就不能再改变。
+
+7. **对象类型和引用传递：**
+   - J`avaScript`可以使用对象类型（`object`），其赋值操作是按引用传递的。
+   - 数组和函数也属于对象类型，具有属性和方法。
+   - 对象是基于原型（`prototype`）的，而不是基于类。
+   - `JavaScript`内置的原型对象有`Date`、`Array`、`String`和`Math`等，其中前三需要使用`new`创建其实例。
+
+8. **浏览器对象：**
+   - 在客户端脚本编程中，通常会使用浏览器对象，如`window`、`document`和`location`等。
+
+9. **调试和错误处理：**
+   - 代码错误时，可以使用`console.log(var)`在控制台输出信息。
+   - 打开浏览器调试工具，查看控制台Console里的错误信息。
+
+10. **前后端分离项目开发：**
+   - 可以使用`jQuery Ajax`简化前后端交互。
