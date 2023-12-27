@@ -43,7 +43,6 @@
     console.log(dtps);  //快速产生代码框架的方法是：输入log后回车
     let displayDateAndTime = function () {   //定义JavaScript函数的另一种方式，属于对象类型
         let dt = new Date().toLocaleString()   //Date是JavaScript内置的动态对象
-        debugger
         dtps.html(dt)  //刷新页面元素
     }
     window.setInterval(displayDateAndTime, 1000)  //调用window对象的定时器方法，实现实时时间显示*/
