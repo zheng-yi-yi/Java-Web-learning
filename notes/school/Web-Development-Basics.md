@@ -15,6 +15,9 @@
 - [Web前端基础](#web前端基础)
   - [HTMLAndCSS项目](#htmlandcss项目)
   - [JavaScriptAndjQuery项目](#javascriptandjquery项目)
+    - [代码学习](#代码学习)
+    - [知识点](#知识点)
+  - [jQuery Ajax项目 — douban](#jquery-ajax项目--douban)
 
 
 # Web前端技术及其发展
@@ -180,7 +183,6 @@
    - `align-items`: 定义弹性容器中子项的垂直对齐方式。
 
 > [返回目录 ↑ ](#目录)
->
 
 ---
 
@@ -192,7 +194,144 @@
 
 ![image-20231227205918033](images/Web-Development-Basics/image-20231227205918033.png)
 
-知识点：
+### 代码学习
+
+首先，`index.html` 页面中有一个元素：
+
+```html
+<div id="dtps">date and time</div>
+```
+
+这里定义了一个具有`id`属性为`"dtps"`的`div`元素，初始显示文本为`"date and time"`。
+
+现在，我们要在页面中显示实时的日期和时间。
+
+方法一：使用**原生的方式**来更新页面上的时间显示
+
+我们来看这段`JavaScript`代码：
+
+```javascript
+// (1) 得到 DOM对象
+let dtps=document.getElementById("dtps")
+// (2) 定义函数，刷新页面元素
+function displayDT(){
+   dtps.innerHTML=new Date().toLocaleString()
+}
+// (3) 实时时间显示
+window.setInterval("displayDT()",1000)
+```
+
+记录：
+
+- `let dtps=document.getElementById("dtps")`: 使用`JavaScript`获取`id`为"`dtps`"的元素对象，并将其赋值给变量`dtps`。
+- `function displayDT() { ... }`: 定义了一个名为`displayDT`的函数，该函数用于更新页面上`id`为"`dtps`"的元素内容。
+- `dtps.innerHTML=new Date().toLocaleString()`: 在`displayDT`函数中，通过`innerHTML`属性将元素的内容更新为当前日期和时间，使用toLocaleString方法以本地格式显示日期和时间。
+- `window.setInterval("displayDT()",1000)`: 使用`setInterval`方法（定时执行指定的函数），每隔`1000`毫秒（即`1`秒）调用一次`displayDT`函数，实现实时更新。
+
+这是使用原生JavaScript方式。
+
+方法二是使用`jQuery`库的方式，可以极大简化操作。
+
+注意，如果使用`jQuery`方式，需要先引入`jQuery`库文件：
+
+```html
+<!--引入了jQuery库，使得页面中可以使用jQuery的功能 -->
+<script src="js/jquery-1.10.2.min.js"></script>
+```
+
+下面，使用`jQuery`选择器和方法来操作DOM元素。
+
+```javascript
+// (1) 将DOM元素封装成jQuery对象
+let dtps = $("#dtps")
+// (2) 定义JavaScript函数的另一种方式，属于对象类型
+let displayDateAndTime = function () {
+   // Date是JavaScript内置的动态对象
+   let dt = new Date().toLocaleString()
+   // 刷新页面元素
+   dtps.html(dt)
+}
+// (3) 调用window对象的定时器方法，实现实时时间显示
+window.setInterval(displayDateAndTime, 1000)
+```
+
+- `let dtps = $("#dtps")`: 使用`jQuery`选择器将`ID`为 "`dtps`" 的元素封装成`jQuery`对象，以便后续操作。
+- `let displayDateAndTime = function () { ... }`: 定义一个函数 `displayDateAndTime`，用于获取当前时间并更新页面元素。
+- `new Date().toLocaleString()`: 获取当前时间，并将其转换为字符串形式，包括日期和时间。
+- `dtps.html(dt)`: 使用`jQuery`的`html`方法将获取到的时间字符串更新到页面元素中。
+- `window.setInterval(displayDateAndTime, 1000)`: 使用`setInterval`方法，每隔`1`秒（1000毫秒）执行一次 `displayDateAndTime` 函数，实现实时更新时间的效果。
+
+对比如下：
+
+| 操作         | 原生JavaScript                             | jQuery                         |
+| ------------ | ------------------------------------------ | ------------------------------ |
+| DOM对象获取  | 使用 `document.getElementById` 获取DOM元素 | 使用 `$` 函数来选择DOM元素     |
+| 刷新页面元素 | 使用 `innerHTML` 属性更新元素内容          | 使用 `html()` 方法更新元素内容 |
+
+---
+
+这里看一下**浏览器会话存储**知识点。代码如下：
+
+```html
+<meta charset="UTF-8" />
+<title>浏览器存储localStorage与localStorage</title>
+<script>
+    // 检测浏览器是否支持sessionStorage
+    let ss = window.sessionStorage; // 获取本地会话存储对象
+
+    if (ss) {
+        // 如果支持sessionStorage
+        document.writeln("浏览器支持sessionStorage! <br/>");
+
+        // 使用sessionStorage存储数据
+        ss.setItem("kc1", "Android开发");
+
+        // 提示用户查看sessionStorage信息的方法
+        document.writeln("打开浏览器调试，从【Application】选项查验已经建立的sessionStorage信息...<br/>");
+        
+        // 提示用户关闭浏览器后再打开站点，不能看到sessionStorage信息。
+        document.writeln("关闭浏览器后再打开站点，不能看到sessionStorage信息。");
+    } else {
+        // 如果不支持sessionStorage，则弹出提示
+        alert("浏览器不支持sessionStorage! ");
+    }
+
+    // 检测浏览器是否支持localStorage
+    let ls = window.localStorage; // 获取本地存储对象
+
+    if (ls) {
+        // 如果支持localStorage
+        document.writeln("<hr/>");
+        document.writeln("浏览器支持localStorage ! <br>");
+
+        // 使用localStorage存储数据
+        ls.setItem("kc2", "Java桌面开发");
+        ls.setItem("kc3", "Java EE开发");
+
+        // 提示用户查看localStorage信息的方法
+        document.writeln("打开浏览器调试，从【Application】选项查验已经建立的localStorage信息... <br/> ");
+        
+        // 提示用户关闭浏览器后再打开站点而不必访问本页面，仍然可查验到localStorage信息。
+        document.writeln("关闭浏览器后再打开站点而不必访问本页面，仍然可查验到localStorage信息。");
+    } else {
+        // 如果不支持localStorage，则弹出提示
+        alert("浏览器不支持localStorage! ");
+    }
+</script>
+```
+
+记录：
+
+- 通过`window.sessionStorage`和`window.localStorage`可以获取浏览器的本地会话存储和本地存储对象。
+- 使用`setItem`方法向`sessionStorage`和`localStorage`中添加数据。
+- 使用`document.writeln`在页面上输出信息，说明浏览器是否支持存储和如何查看存储的数据。
+- 如果浏览器不支持`sessionStorage`或`localStorage`，则通过`alert`弹出提示。
+
+> [返回目录 ↑ ](#目录)
+> 
+---
+
+### 知识点
 
 1. **客户端脚本：**
    - 客户端脚本能够被浏览器程序解释执行，用于实现交互效果或动态效果。
@@ -239,3 +378,9 @@
 
 10. **前后端分离项目开发：**
    - 可以使用`jQuery Ajax`简化前后端交互。
+
+> [返回目录 ↑ ](#目录)
+
+---
+
+## jQuery Ajax项目 — douban
