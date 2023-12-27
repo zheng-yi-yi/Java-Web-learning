@@ -416,9 +416,12 @@ window.setInterval(displayDateAndTime, 1000)
    - 通过访问`https://movie.querydata.org/api?id=10606004`，可以获取电影相关信息的`JSON`格式数据。
 
 5. **Postwoman:**
-   - `Postwoman`是一个用于测试`API`的工具，可用于测试豆瓣的后台接口并格式化返回的数据信息。地址：Postwoman
+   - `Postwoman`是一个用于测试`API`的工具，可用于测试豆瓣的后台接口并格式化返回的数据信息，地址：[Postwoman](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/tools/postwoman.v.1.1.7)
 
 6. **JSON在线解析:**
-   - 网站https://www.json.cn提供了在线解析JSON数据的服务，以折叠式方式查看数据信息，有助于直观地了解JSON结构。
+   - 网站`https://www.json.cn`提供了在线解析`JSON`数据的服务，以折叠式方式查看数据信息，有助于直观地了解JSON结构。
 
 ### 3.3.2 代码学习
+
+打开项目中的`useJson.html`页面，效果如下：
+

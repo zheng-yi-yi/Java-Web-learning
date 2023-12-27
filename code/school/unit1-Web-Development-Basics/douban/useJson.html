@@ -1,29 +1,35 @@
 <!--声明文档编码-->
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 
 <!--使用HTML标签定义页面元素-->
-请输入豆瓣电影id：<input type="text" id="idFieId" value="10606004"/>
+请输入豆瓣电影id：<input type="text" id="idFieId" value="10606004" />
 <div id="filmTitle">电影名称</div>
-<img id="poster" alt="电影海报"/>
+<img id="poster" alt="电影海报" />
 <div id="filmDescription">电影描述</div>
 
 <!--定义页面元素的CSS样式-->
 <style>
-    #idFieId{
-        width: 15ch;  /*设置文本框宽度为字符个数*/
+    #idFieId {
+        width: 15ch;
+        /*设置文本框宽度为字符个数*/
     }
+
     #filmTitle {
         font-size: 2em;
-        width: 33%; /*为了水平居中div，必须指定其宽度*/
+        width: 33%;
+        /*为了水平居中div，必须指定其宽度*/
         margin: 0px auto;
-        text-align: center; /*为div内文本水平居中*/
+        text-align: center;
+        /*为div内文本水平居中*/
         color: red;
     }
 
     img {
-        width: 33%; /*宽度与电影名称一致*/
+        width: 33%;
+        /*宽度与电影名称一致*/
         height: 350px;
-        display: block; /*块级元素*/
+        display: block;
+        /*块级元素*/
         margin: 10px auto;
     }
 
@@ -31,7 +37,8 @@
         color: blue;
         margin-top: 1em;
         line-height: 1.7em;
-        text-indent: 2em /*首行缩进2个汉字*/
+        text-indent: 2em
+            /*首行缩进2个汉字*/
     }
 </style>
 
@@ -40,37 +47,36 @@
 
 <!--自定义JavaScript脚本-->
 <script>
-    let idFieId=$("#idFieId")   //文本输入框
-    let filmTitle=$("#filmTitle")
-    let poster=$("#poster")
+    let idFieId = $("#idFieId")   //文本输入框
+    let filmTitle = $("#filmTitle")
+    let poster = $("#poster")
     let filmDescription = $("#filmDescription")
 
-    let idv=idFieId.val()
+    let idv = idFieId.val()
     getFilmInformation(idv)  //方法传值调用
 
-    idFieId.keyup(function(event){  //按键事件
-        if(event.keyCode==13){   //按回车键
-            id=idFieId.val()  //id是请求参数名称
+    idFieId.keyup(function (event) {  //按键事件
+        if (event.keyCode == 13) {   //按回车键
+            id = idFieId.val()  //id是请求参数名称
             getFilmInformation(id)  //方法调用
         }
     })
 
-    function getFilmInformation(idv){
+    function getFilmInformation(idv) {
         $.ajax({
-            url:"https://movie.querydata.org/api",
-            data:{
-                id:idv,  //请求参数
+            url: "https://movie.querydata.org/api",
+            data: {
+                id: idv,  //请求参数
             },
-            success:function(response){  //Web服务器有响应信息时的处理方法
+            success: function (response) {  //Web服务器有响应信息时的处理方法
                 console.log("成功响应")
                 filmTitle.text(response.originalName)
-                poster.attr("src",response.data[0].poster)
+                poster.attr("src", response.data[0].poster)
                 filmDescription.html(response.data[0].description)
             },
-            error:function(){
+            error: function () {
                 alert("请求的服务接口没有正常响应！\n豆瓣后台接口限制频繁访问，两次请求之间的时间间隔大约需要半分钟。");
             }
         })
     }
 </script>
-
