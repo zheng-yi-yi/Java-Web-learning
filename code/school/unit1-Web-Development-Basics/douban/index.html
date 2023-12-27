@@ -1,0 +1,74 @@
+<meta charset="UTF-8"/>
+<div id="header">jQuery Ajax与JSON数据格式的使用</div>
+<div id="main">
+    <div id="left">
+        <ul>
+            <div><a href="https://movie.douban.com" target="_blank">豆瓣电影网站</a></div>
+            <div><a href="https://movie.querydata.org/api?id=10606004" target="kj">获取豆瓣电影json数据</a></div>
+            <div><a href="https://www.json.cn" target="kj">在线格式化json数据</a></div>
+            <div><a href="useJson.html" target="kj">使用json数据</a></div>
+        </ul>
+    </div>
+    <div id="right">
+        <iframe src="ajaxKeys.html" name="kj"></iframe>
+    </div>
+</div>
+
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        text-decoration: none;
+    }
+    #header{
+        width: 70%;
+        margin: 0 auto;
+        font-size: 2em;
+        line-height: 3em;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background-color: ghostwhite;
+    }
+    #main{
+        width: 70%;
+        height: 600px;
+        border-left: aliceblue solid 1px;
+        border-bottom: aliceblue solid 1px;
+        margin: 0 auto;
+    }
+    #left{
+        width: 20%;
+        height: 600px;
+        margin: 0 auto;
+        border-right: beige solid 1px;
+        line-height: 3em;
+        float: left;
+    }
+    #right{
+        width: 80%;
+        height: 600px;
+        margin: 0 auto;
+        border-right: beige solid 1px;
+        float: left;
+    }
+    #left ul{
+        margin-top: 10%;
+        margin-left: 5%;
+    }
+    #left li{
+        list-style: none;
+    }
+    #left a{
+        text-decoration: none;
+    }
+    iframe{
+        width: 100%;
+        height: 600px;
+        border: 0;
+        padding-top: 1em;
+    }
+</style>
+
+
