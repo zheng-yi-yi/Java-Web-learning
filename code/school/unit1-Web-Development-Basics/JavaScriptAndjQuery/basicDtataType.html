@@ -1,6 +1,7 @@
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 
-<b>JavaScript基本数据类型</b><hr/>
+<b>JavaScript基本数据类型</b>
+<hr />
 <script>
     let age = 35.5
     document.writeln(typeof age) //number
@@ -22,18 +23,18 @@
     //相等(==)但不全等（===）
     document.writeln(null === undefined) //false
     //判定类型是否相同
-    document.writeln(typeof(null) == typeof(undefined)) //false
+    document.writeln(typeof (null) == typeof (undefined)) //false
 
     document.writeln("<hr/>")
     let str = "我不是一个真的对象" //以字面量形式创建变量
     //str被暂时包装成一个String对象，可调用该对象的属性和方法
     document.writeln(str.length) //输出9
-    document.writeln(typeof(str)) //输出string
-    document.writeln(typeof(str) == Object) //输出false
+    document.writeln(typeof (str)) //输出string
+    document.writeln(typeof (str) == Object) //输出false
     let str1 = "abc"
     let str2 = new String("abc")
     document.writeln(str1 == str2) //输出：true（值相等）
-    document.writeln(typeof(str2)) //输出object
+    document.writeln(typeof (str2)) //输出object
     document.writeln(str1 === str2) //输出：false（不是全等）
     document.writeln("<hr/>")
     let arr1 = new Array(3) //创建数组
@@ -41,11 +42,11 @@
     arr1[1] = "JSP"
     arr1[2] = "PHP"
     let arr2 = ["ASP", "JSP", "PHP"] //直接赋值的方式创建数组
-    document.writeln(typeof(arr2)) //输出：object
+    document.writeln(typeof (arr2)) //输出：object
     document.writeln(arr1[0] == arr2[0]) //输出true
     document.writeln(arr1 == arr2) //输出false（地址比较）
     document.writeln(arr1.length == arr2.length) //输出true
     let dt = new Date()
-    document.writeln(typeof(dt)) //输出object
+    document.writeln(typeof (dt)) //输出object
     console.log(dt.toLocaleString()) //本地环境的日期与时间格式
 </script>
