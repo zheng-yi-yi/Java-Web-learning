@@ -14,6 +14,7 @@
   - [常用快捷操作](#常用快捷操作)
 - [Web前端基础](#web前端基础)
   - [HTMLAndCSS项目](#htmlandcss项目)
+  - [JavaScriptAndjQuery](#javascriptandjquery)
 
 
 # Web前端技术及其发展
@@ -122,6 +123,8 @@
 
 ## HTMLAndCSS项目
 
+项目地址：[HTMLAndCSS项目](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/HTMLAndCSS)
+
 项目主页：
 
 ![image-20231227204911559](images/Web-Development-Basics/image-20231227204911559.png)
@@ -163,4 +166,8 @@
    - `justify-content`: 定义弹性容器中子项的水平排列方式。
    - `align-items`: 定义弹性容器中子项的垂直对齐方式。
 
-项目地址：[HTMLAndCSS项目](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/HTMLAndCSS)
+## JavaScriptAndjQuery
+
+项目主页：
+
+![image-20231227205918033](images/Web-Development-Basics/image-20231227205918033.png)
