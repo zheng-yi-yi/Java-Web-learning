@@ -1,0 +1,24 @@
+<meta charset="UTF-8"/>
+<title>浏览器存储localStorage与localStorage</title>
+<script>
+    let ss = window.sessionStorage  //本地会话存储
+    if (ss) {
+        document.writeln("浏览器支持sessionStorage! <br/>");
+        ss.setItem("kc1", "Android开发");
+        document.writeln("打开浏览器调试，从【Application】选项查验已经建立的sessionStorage信息...<br/>")
+        document.writeln("关闭浏览器后再打开站点，不能看到sessionStorage信息。")
+    } else {
+        alert("浏览器不支持sessionStorage! ")
+    }
+    let ls = window.localStorage //本地存储
+    if (ls) {
+        document.writeln("<hr/>")
+        document.writeln("浏览器支持localStorage ! <br>")
+        ls.setItem("kc2", "Java桌面开发");
+        ls.setItem("kc3", "Java EE开发")
+        document.writeln("打开浏览器调试，从【Application】选项查验已经建立的localStorage信息... <br/> ")
+        document.writeln("关闭浏览器后再打开站点而不必访问本页面，仍然可查验到localStorage信息。")
+    } else {
+        alert("浏览器不支持localStorage! ")
+    }
+</script>
