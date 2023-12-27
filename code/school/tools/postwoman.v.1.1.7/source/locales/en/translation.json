@@ -1,0 +1,104 @@
+{
+    "help":"Help Doc",
+    "interfaceName":"Interface Name",
+    "interfaceNameTip":"Please input interface name",
+    "searchTip":"Click enter to search",
+    "moduleNameTip":"Please input module name",
+    "module":"Module",
+    "moduleName":"Module Name",
+    "saveModuleTip":"Save to exist module/folder",
+    "newModuleTip":"Or create new module/folder",
+    "save":"Save",
+    "saveAs":"Save As",
+    "renameModule":"Rename Module",
+    "interfaceDebug":"Debug Interface",
+    "jsonTool":"Json Tool",
+    "officialWebsite":"Official Website",
+    "setting":"Setting (系统设置)",
+    "login":"Login",
+    "loginAndIco":"Login →",
+    "registerAndIco":"Register →",
+    "inputJsonTip":"Please input json, Then click [Pretty] ",
+    "submit":"Submit",
+    "submitTowLag":"Submit「提交」",
+    "welcomeTip":"Change language 修改语言, Timeout 超时时间... 点我！Click me!",
+    "tip":"Tips:",
+    "helperDocUrl":"http://api.crap.cn/static/help/155037970568801000060.html",
+    "jsonToolDocUrl":"http://api.crap.cn/static/help/155037909955501000049.html",
+    "changeProjectTip":"1. You can't change project until you login.\n 2. After change project, please click 「Sync Data」to get latest data.\n 3. If delete fails, ask project owner, \n     add make sure you have delete permission",
+    "projectList":"Project list:",
+    "createNewProject":"Create new project",
+    "inviteUser":"Invite friend join project",
+    "inviteTip":"「Project Owner」Share invite url to friend, click after login",
+    "contractTip":"Scan code to connection「Wechat」",
+    "loadingTip":"Loading....",
+    "env":{
+        "addEnv":"Add Environment",
+        "envVariable":"Unselected environment",
+        "envList":"Environment list",
+        "manageEnvVariable":"Manage environment variable",
+        "envName":"Environment name",
+        "envVarList":"Environment Variable List",
+        "varTip1":"1. Environment Variable can used in url,params,header. For Example:{{variable}}"
+    },
+    "head" :{
+        "title":"Postwoman | Http Test"
+    },
+    "nav":{
+        "loginOut":"Logout",
+        "clearLocal":"Clear Local Data",
+        "newTab":"New Tab",
+        "newInterface":"New Interface",
+        "sync":"Sync Data"
+    },
+    "left":{
+        "history":"History"
+    },
+    "right":{
+        "interfaceUrl":"Please input interface url",
+        "send":"Send",
+        "header":"Header",
+        "param":"Param",
+        "batchEdit":"Batch Edit",
+        "singleEdit":"Single Edit",
+        "custom":"Custom",
+        "responseBody":"Response Body",
+        "responseCookie":"Response Cookie",
+        "responseHeader":"Response Header"
+    },
+    "json":{
+        "row":"Row",
+        "pretty":"Pretty",
+        "expand":"Expand",
+        "collapseOne":"One Level",
+        "collapseTwo":"Two Level",
+        "collapseThree":"Three Level",
+        "collapseFour":"Four Level",
+        "nl2br":"Nl2br",
+        "help":"Help Doc"
+    },
+    "response":{
+        "responseTip":"Hit the 「Send」 button to get a response",
+        "responseHelp":"「Click to get help」"
+    },
+    "set":{
+        "language":"Plug Language(语言)",
+        "serviceUrl":"Remote Service Url",
+        "timeout":"Http Timeout",
+        "menuWidth":"Left menu width",
+        "defMenuWidth":"Default menu width - 15%",
+        "menuWidthTip":"Menu width must be number (%)",
+        "inputServiceUrlTip":"Please input remote service website url",
+        "defServiceUrlTip":"Default Service Url : http://api.crap.cn",
+        "inputTimeoutTip":"Please input http timeout (ms)",
+        "defTimeoutTip":"Default timeout — 10000(ms)"
+    },
+    "url":{
+        "editInterface":"admin.do#/user/interface/edit?pageName=%E7%BC%96%E8%BE%91%E6%8E%A5%E5%8F%A3&dataType=interface&id={{1}}&menu_a=menu-project&menu_b=menu_interface&projectId={{0}}",
+        "viewInterface":"index.do#/interface/detail?projectId={{0}}&id={{1}}"
+    },
+    "inter":{
+        "editDoc":"Edit doc",
+        "vieDoc":"View doc"
+    }
+}
