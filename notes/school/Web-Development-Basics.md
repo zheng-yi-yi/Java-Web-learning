@@ -425,3 +425,4 @@ window.setInterval(displayDateAndTime, 1000)
 
 打开项目中的`useJson.html`页面，效果如下：
 
+![image-20231227225736781](images/Web-Development-Basics/image-20231227225736781.png)
