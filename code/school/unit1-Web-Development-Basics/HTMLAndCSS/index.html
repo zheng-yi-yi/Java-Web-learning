@@ -1,0 +1,108 @@
+<meta charset="UTF-8"/>
+<title>HTMLAndCSS主页</title>
+
+<!--网站头部设计-->
+<div id="header">
+    <div id="row1">
+        <div>date and time</div>
+        <div id="row12">MIS Name</div>
+        <div>state</div>
+    </div>
+    <div id="row2">
+        <div><a href="#">站点主页</a></div>
+        <div><a href="#">会员登录</a></div>
+        <div><a href="#">会员注册</a></div>
+        <div><a href="#">会员登出</a></div>
+    </div>
+</div>
+
+<!--网站主体设计-->
+<div id="main">
+    <div id="left">
+        <ul>
+            <!--超链接标签之target属性，用于指定显示目标网页的窗口（默认是新开窗口）-->
+            <li><a href="http://www.wustwzx.com" target="kj">吴志祥教学网站</a></li>
+            <li><a href="http://www.wustwzx.com/javaee/index.html" target="kj">Java EE课程网站</a></li>
+            <li><a href="https://movie.douban.com" target="kj">豆瓣电影网站</a></li>
+        </ul>
+    </div>
+    <div id="right">
+        <iframe src="WebFront.html" name="kj"></iframe>   <!--定义页内框架-->
+    </div>
+</div>
+
+<style>
+    *{    /*通用选择器*/
+        margin: 0;
+        padding: 0;
+        /*防止因为元素的内边距和边框而导致元素的宽度和高度变大，从而使元素的大小更加稳定和可控。*/
+        box-sizing: border-box;
+    }
+    #header{  /*id选择器*/
+        width: 80%;
+        margin: 0 auto;
+    }
+    #row1{
+        display: flex;  /*定义弹性布局 */
+        justify-content: space-around; /*水平均匀分布*/
+        align-items: center; /*垂直居中*/
+        background-color: burlywood;
+    }
+    #row12{
+        font-size: 30px;
+        line-height: 2em;
+    }
+    #row2{
+        display: flex;
+        justify-content: space-around;
+        line-height: 2em;  /*定义行高，相对于当前字体高度的2倍*/
+        background-color: darkgrey;
+    }
+    #row2 a{  /*后代选择器，作为最常用的组合选择器，通过空格定义id选择器和标签选择器*/
+        text-decoration: none;  /*取消超链接默认的下划线*/
+    }
+    #row2 a:hover{  /*a:hover称为伪类选择器，定义鼠标悬停在链接上时的状态*/
+        color:red;
+    }
+    #main{
+        width: 80%;
+        height: 450px;
+        border-left: aliceblue solid 1px;
+        border-bottom: aliceblue solid 1px;
+        margin: 0 auto;
+    }
+    #left{  /*作为main的子容器*/
+        width: 20%;  /*相对父容器的宽度*/
+        height: 450px;
+        margin: 0 auto;
+        border-right: beige solid 1px;  /*右边框*/
+        float: left;  /*向左浮动，实现左右div水平并排*/
+        background-image: url("images/bg.jpg");  /*设置背景图片*/
+    }
+    #right{  /*作为main的子容器*/
+        width: 80%;   /*相对父容器的宽度*/
+        height: 450px;
+        margin: 0 auto;
+        border-right: beige solid 1px;  /*左边框*/
+        float: left;
+    }
+    #left ul{
+        margin-top: 10%;  /*外边距*/
+        margin-left: 5%;  /*左边距*/
+    }
+    #left li{
+        line-height: 2em;
+        list-style: none;  /*取消项目列表默认的项目符号*/
+    }
+    #left a{
+        text-decoration: none;
+    }
+    iframe{  /*定义页内框架外观*/
+        width: 100%; /*right作为iframe的父容器*/
+        height: 450px;
+        /*background-color: aliceblue;*/
+        border: 0;
+    }
+</style>
+
+
