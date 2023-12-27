@@ -1,6 +1,6 @@
-<meta charset="UTF-8"/>
+<meta charset="UTF-8" />
 <title>JavaScriptAndjQuery主页</title>
-<div id="header">  <!--网站头部设计-->
+<div id="header"> <!--网站头部设计-->
     <div id="row1">
         <div id="dtps">date and time</div>
         <div id="row12">MIS Name</div>
@@ -27,10 +27,10 @@
     <div id="right">
         <iframe src="ClientScript.html" name="kj"></iframe>
     </div>
-</div>  <!--网站主体设计-->
+</div> <!--网站主体设计-->
 
 
-<script src="js/jquery-1.10.2.min.js"></script>  <!--法二才需要-->
+<script src="js/jquery-1.10.2.min.js"></script> <!--法二才需要-->
 <script> <!--定义客户端脚本-->
     //法一：使用原生方式
     /*let dtps=document.getElementById("dtps")   //得到 DOM对象
@@ -39,32 +39,37 @@
     }
     window.setInterval("displayDT()",1000)  //实时时间显示*/
     //法二：使用jQuery库方式
-    let dtps=$("#dtps")  //将DOM元素封装成jQuery对象；需要加载jQuery库
+    let dtps = $("#dtps")  //将DOM元素封装成jQuery对象；需要加载jQuery库
     console.log(dtps);  //快速产生代码框架的方法是：输入log后回车
-    let displayDateAndTime=function(){   //定义JavaScript函数的另一种方式，属于对象类型
-        let dt=new Date().toLocaleString()   //Date是JavaScript内置的动态对象
+    let displayDateAndTime = function () {   //定义JavaScript函数的另一种方式，属于对象类型
+        let dt = new Date().toLocaleString()   //Date是JavaScript内置的动态对象
         debugger
         dtps.html(dt)  //刷新页面元素
     }
-    window.setInterval(displayDateAndTime,1000)  //调用window对象的定时器方法，实现实时时间显示*/
+    window.setInterval(displayDateAndTime, 1000)  //调用window对象的定时器方法，实现实时时间显示*/
 </script>
 <style>
-    * { /*通用选择器*/
+    * {
+        /*通用选择器*/
         margin: 0;
         padding: 0;
         /*防止因为元素的内边距和边框而导致元素的宽度和高度变大，从而使元素的大小更加稳定和可控。*/
         box-sizing: border-box;
     }
 
-    #header { /*id选择器*/
+    #header {
+        /*id选择器*/
         width: 80%;
         margin: 0 auto;
     }
 
     #row1 {
-        display: flex; /*定义弹性布局 */
-        justify-content: space-around; /*水平均匀分布*/
-        align-items: center; /*垂直居中*/
+        display: flex;
+        /*定义弹性布局 */
+        justify-content: space-around;
+        /*水平均匀分布*/
+        align-items: center;
+        /*垂直居中*/
         background-color: burlywood;
     }
 
@@ -76,15 +81,19 @@
     #row2 {
         display: flex;
         justify-content: space-around;
-        line-height: 2em; /*定义行高，相对于当前字体高度的2倍*/
+        line-height: 2em;
+        /*定义行高，相对于当前字体高度的2倍*/
         background-color: darkgrey;
     }
 
-    #row2 a { /*后代选择器，作为最常用的组合选择器，通过空格定义id选择器和标签选择器*/
-        text-decoration: none; /*取消超链接默认的下划线*/
+    #row2 a {
+        /*后代选择器，作为最常用的组合选择器，通过空格定义id选择器和标签选择器*/
+        text-decoration: none;
+        /*取消超链接默认的下划线*/
     }
 
-    #row2 a:hover { /*a:hover称为伪类选择器，定义鼠标悬停在链接上时的状态*/
+    #row2 a:hover {
+        /*a:hover称为伪类选择器，定义鼠标悬停在链接上时的状态*/
         color: red;
     }
 
@@ -96,43 +105,54 @@
         margin: 0 auto;
     }
 
-    #left { /*作为main的子容器*/
-        width: 20%; /*相对父容器的宽度*/
+    #left {
+        /*作为main的子容器*/
+        width: 20%;
+        /*相对父容器的宽度*/
         height: 500px;
         margin: 0 auto;
-        border-right: beige solid 1px; /*右边框*/
-        float: left; /*向左浮动，实现左右div水平并排*/
-        background-image: url("images/bg.jpg"); /*设置背景图片*/
+        border-right: beige solid 1px;
+        /*右边框*/
+        float: left;
+        /*向左浮动，实现左右div水平并排*/
+        background-image: url("images/bg.jpg");
+        /*设置背景图片*/
     }
 
-    #right { /*作为main的子容器*/
-        width: 80%; /*相对父容器的宽度*/
+    #right {
+        /*作为main的子容器*/
+        width: 80%;
+        /*相对父容器的宽度*/
         height: 500px;
         margin: 0 auto;
-        border-right: beige solid 1px; /*左边框*/
+        border-right: beige solid 1px;
+        /*左边框*/
         float: left;
     }
 
     #left ul {
-        margin-top: 10%; /*外边距*/
-        margin-left: 5%; /*左边距*/
+        margin-top: 10%;
+        /*外边距*/
+        margin-left: 5%;
+        /*左边距*/
     }
 
     #left li {
         line-height: 2em;
-        list-style: none; /*取消项目列表默认的项目符号*/
+        list-style: none;
+        /*取消项目列表默认的项目符号*/
     }
 
     #left a {
         text-decoration: none;
     }
 
-    iframe { /*定义页内框架外观*/
-        width: 100%; /*right作为iframe的父容器*/
+    iframe {
+        /*定义页内框架外观*/
+        width: 100%;
+        /*right作为iframe的父容器*/
         height: 500px;
         /*background-color: aliceblue;*/
         border: 0;
     }
 </style>
-
-
