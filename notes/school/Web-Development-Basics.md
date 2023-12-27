@@ -407,16 +407,16 @@ window.setInterval(displayDateAndTime, 1000)
    - 通过使用`jQuery Ajax`，可以更容易地处理各种`Ajax`请求和处理响应。
 
 3. **JSON（JavaScript Object Notation）:**
-   - JSON是一种轻量级的数据交换格式，使用键值对的方式来表示数据。
+   - `JSON`是一种轻量级的数据交换格式，使用键值对的方式来表示数据。
    - 独立于编程语言，易于阅读和编写，并能够被大多数编程语言轻松处理。
-   - 使用大括号{}表示对象，方括号[]表示数组，键名必须使用双引号""括起来。
+   - 使用大括号`{}`表示对象，方括号`[]`表示数组，键名必须使用双引号`""`括起来。
 
 4. **豆瓣电影网站和API:**
-   - 访问豆瓣电影网站（https://movie.douban.com/），选择电影后可以得到电影的id（观察浏览器地址栏的subject参数）。
-   - 通过访问https://movie.querydata.org/api?id=10606004，可以获取电影相关信息的JSON格式数据。
+   - 访问豆瓣电影网站（`https://movie.douban.com/`），选择电影后可以得到电影的`id`（观察浏览器地址栏的参数）。
+   - 通过访问`https://movie.querydata.org/api?id=10606004`，可以获取电影相关信息的`JSON`格式数据。
 
 5. **Postwoman:**
-   - Postwoman是一个用于测试API的工具，可用于测试豆瓣的后台接口并格式化返回的数据信息。
+   - `Postwoman`是一个用于测试`API`的工具，可用于测试豆瓣的后台接口并格式化返回的数据信息。地址：Postwoman
 
 6. **JSON在线解析:**
    - 网站https://www.json.cn提供了在线解析JSON数据的服务，以折叠式方式查看数据信息，有助于直观地了解JSON结构。
