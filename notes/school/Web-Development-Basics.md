@@ -38,6 +38,7 @@
     - [router/index.js](#routerindexjs)
     - [main.js](#mainjs)
     - [MVVM.vue](#mvvmvue)
+    - [axios.get()](#axiosget)
 
 
 # 1. Web前端技术及其发展
@@ -882,3 +883,169 @@ export default {
 效果如下：
 
 ![双向绑定](images/Web-Development-Basics/双向绑定.gif)
+
+### axios.get()
+
+我们来学一下`axios.get()`。代码如下：
+
+```vue
+<!-- DoubanFilm.vue -->
+<template>
+   <div><input v-model="filmId">&nbsp;<button @click="getDoubanFileInfo">获取豆瓣电影信息</button></div>
+   <div>{{filmName}}</div>
+   <div><img v-bind:src="filmPoster"></div>
+   <div>{{filmDescription}}</div>
+</template>
+
+<script>
+import axios from 'axios'
+export default {
+   data(){
+      return{
+         filmId:10606004,
+         filmName:'电影名称',
+         filmPoster:'电影海报',
+         filmDescription:'电影描述'
+      }
+   },
+   methods: {
+      getDoubanFileInfo(){
+         //使用豆瓣电影后台接口；使用params实现带参数传递的get请求
+         axios.get("https://movie.querydata.org/api",{
+               params:{  //params称为异步GET请求的参数对象。https://movie.querydata.org/api?id=10606004不通用
+                  id:this.filmId
+               }
+         }).then(res=>{
+               console.log(res.data)
+               this.filmName=res.data.originalName;this.filmPoster=res.data.data[0].poster
+               this.filmDescription=res.data.data[0].description
+         }).catch(err=>{
+               console.log(err)
+               alert("请求失败！\n可能的原因如下：\n（1）两次请求的间隔未超过半分钟\n（2）请求的url或参数错误")
+         })
+      }
+   },
+   mounted() {
+      this.getDoubanFileInfo()
+   }
+}
+</script>
+```
+
+这段代码是一个基本的 `Vue` 组件，通过 axios 库进行异步请求获取豆瓣电影信息，并在页面上显示。
+
+下面是对代码的解释：
+
+1. **导入 Axios 模块**:
+
+   ```javascript
+   import axios from 'axios'
+   ```
+
+   通过 `import` 语句导入 axios 模块，以便在组件中使用。
+
+2. **数据初始化**:
+
+   ```javascript
+   data() {
+      return {
+         filmId: 10606004,
+         filmName: '电影名称',
+         filmPoster: '电影海报',
+         filmDescription: '电影描述'
+      }
+   }
+   ```
+
+   在 Vue 组件的 `data` 钩子中初始化了组件的数据，包括 `filmId`（豆瓣电影的ID）、`filmName`、`filmPoster`、`filmDescription`。
+
+3. **异步请求方法**:
+
+   ```javascript
+   methods: {
+      getDoubanFileInfo() {
+         // 使用豆瓣电影后台接口；使用 params 实现带参数传递的 GET 请求
+         axios.get("https://movie.querydata.org/api", {
+            params: {
+                  id: this.filmId
+            }
+         }).then(res => {
+            console.log(res.data)
+            this.filmName = res.data.originalName;
+            this.filmPoster = res.data.data[0].poster;
+            this.filmDescription = res.data.data[0].description;
+         }).catch(err => {
+            console.log(err)
+            alert("请求失败！\n可能的原因如下：\n（1）两次请求的间隔未超过半分钟\n（2）请求的 URL 或参数错误")
+         })
+      }
+   }
+   ```
+
+   - 在 `getDoubanFileInfo` 方法中，使用 `axios` 的 `get` 方法发送 GET 请求到豆瓣电影后台接口。
+   - `params` 参数用于传递 `GET` 请求的参数，这里传递了豆瓣电影的`ID`（filmId）。
+   - 使用 `then` 处理请求成功的情况，更新组件的数据。
+   - 使用 `catch` 处理请求失败的情况，打印错误信息并弹出提示框。
+
+4. **模板**:
+
+   ```html
+   <template>
+       <div>
+           <input v-model="filmId">&nbsp;
+           <button @click="getDoubanFileInfo">获取豆瓣电影信息</button>
+       </div>
+       <div>{{ filmName }}</div>
+       <div><img v-bind:src="filmPoster"></div> 
+       <div>{{ filmDescription }}</div>
+   </template>
+   ```
+
+   - 在模板中，使用 `v-model` 将输入框的值与 `filmId` 数据进行双向绑定。
+   - 使用 `@click` 监听按钮点击事件，触发 `getDoubanFileInfo` 方法。
+   - 展示豆瓣电影信息，包括电影名称、海报和描述。
+
+5. **生命周期钩子**:
+
+   ```javascript
+   mounted() {
+       this.getDoubanFileInfo()
+   }
+   ```
+
+   在 `Vue` 组件的 `mounted` 生命周期钩子中调用 `getDoubanFileInfo` 方法，保证组件被挂载后立即执行异步请求。
+
+这段代码实现了一个简单的 `Vue` 组件，通过 `Axios` 发送异步请求获取豆瓣电影信息，并在页面上进行展示。
+
+好，我们来总结一下使用 `axios.get()` 发送 GET 请求时的模板：
+
+```javascript
+// 导入axios模块
+import axios from 'axios';
+
+axios.get('api_url', {
+   params: {
+      key1: 'value1',
+      key2: 'value2',
+      // ...
+   }
+}).then(response=>{
+      // 处理成功响应
+      // ...
+   })
+   .catch({
+      // 处理错误响应
+      // ...
+   });
+```
+
+记录：
+
+1. `axios.get('your_api_url', {...})`：使用 `axios.get()` 方法发送 GET 请求，第一个参数是请求的 API 地址，第二个参数是可选的配置对象。
+2. `params`：在配置对象中，可以设置 `params` 属性传递请求参数。
+3. `.then(response => {...})`：处理成功响应的回调函数，`response` 包含了响应的详细信息，其中的 `data` 属性包含了响应的主体内容。
+4. `.catch(error => {...})`：处理错误响应的回调函数，`error` 包含了错误的详细信息。
+
+请根据实际情况替换 `'your_api_url'` 和请求参数，以及根据需要配置请求头。
+
+> 在Web项目前后端分离开发时，大量使用post请求且参数使用JSON格式。此时，不需要params。
