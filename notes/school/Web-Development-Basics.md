@@ -796,7 +796,7 @@ export default {
 </script>
 ```
 
-![](images/Web-Development-Basics/单向绑定.gif)
+![单向绑定](images/Web-Development-Basics/单向绑定.gif)
 
 这是一个使用Vue.js的简单示例，展示了三种单向绑定的方式：插值、v-text指令和v-bind指令。
 
