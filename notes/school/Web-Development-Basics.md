@@ -34,6 +34,9 @@
   - [4.7 在命令行方式下运行 Vite+Vue3 项目](#47-在命令行方式下运行-vitevue3-项目)
 - [5. Vue 3基础语法示例项目](#5-vue-3基础语法示例项目)
   - [vite-vue3-basic](#vite-vue3-basic)
+    - [App.vue](#appvue)
+    - [router/index.js](#routerindexjs)
+    - [main.js](#mainjs)
 
 
 # 1. Web前端技术及其发展
@@ -710,3 +713,36 @@ Vue的原理在于通过组件化和响应式数据绑定，构建出整个应�
 
 ![image-20231229105123118](images/Web-Development-Basics/image-20231229105123118.png)
 
+### App.vue
+
+- **模板标签：**
+  - 使用了 `<router-link>` 定义了多个路由链接，每个链接指向不同的路由路径。
+  - 包含了一个 `<router-view>` 标签，用于显示匹配到的路由组件。
+
+- **样式：**
+  - 使用了 `<style scoped>`，确保样式仅作用于当前组件。
+
+### router/index.js
+
+- **路由表定义：**
+  - 在 `routes` 数组中，每个对象表示一个路由映射，包括路径 (`path`) 和对应的组件 (`component`)。
+
+- **路由对象创建：**
+  - 使用 `createRouter` 创建路由对象，设置 `history` 为 `createWebHistory()`，以使用 `HTML5 History` 模式。
+
+- **路由导出：**
+  - 导出创建好的路由对象，供 `main.js` 使用。
+
+### main.js
+
+- **Vue 实例创建：**
+  - 使用 `createApp` 创建 `Vue` 实例，并将根组件 `App` 传入。
+
+- **百度地图配置：**
+  - 使用 `app.use(BaiduMap, { ak: '' })` 配置百度地图，其中 `ak` 是你的百度应用的 `key`。
+
+- **路由和百度地图插件注册：**
+  - 使用 `app.use(router)` 注册路由，使路由链接生效。
+  - 使用 `app.mount('#app')` 挂载 `Vue` 实例到 `HTML` 中。
+
+这个项目配置了路由链接，每个链接对应不同的路由路径，而这些路径与相应的组件相对应。通过 `router-link` 和 `router-view` 实现了简单的页面导航和切换。
