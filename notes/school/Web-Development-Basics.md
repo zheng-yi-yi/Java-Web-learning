@@ -817,23 +817,21 @@ export default {
    这里使用了`v-bind`指令，将`<a>`元素的href属性与Vue实例中的`url`数据进行关联。点击按钮调用`setUrl`方法后，`url`会被设置为`http://www.wustwzx.com`，从而动态地更新`<a>`元素的href属性。
 
 ```javascript
-export default {
-    data() {
-        return {
-            message: 'Hello Vue!',
-            url: "",
-        };
-    },
-    methods: {
-        reverseMessage: function () {
-            this.message = this.message.split('').reverse().join('');
-        },
-        setUrl() {
+data() {
+    return {
+        message: 'Hello Vue!',
+        url: "",
+    };
+},
+methods: {
+   reverseMessage: function () {
+      this.message = this.message.split('').reverse().join('');
+   },
+      setUrl() {
             this.url = 'http://www.wustwzx.com';
             alert('已经设置了教学网站网址，可以访问啦...');
-        },
-    },
-};
+      },
+},
 ```
 
 我们来看脚本中的代码：
