@@ -33,7 +33,7 @@
     - [生产环境部署](#生产环境部署)
   - [4.7 在命令行方式下运行 Vite+Vue3 项目](#47-在命令行方式下运行-vitevue3-项目)
 - [5. Vue 3基础语法示例项目](#5-vue-3基础语法示例项目)
-  - [](#)
+  - [vite-vue3-basic](#vite-vue3-basic)
 
 
 # 1. Web前端技术及其发展
@@ -702,4 +702,11 @@ Vue的原理在于通过组件化和响应式数据绑定，构建出整个应�
 
 # 5. Vue 3基础语法示例项目
 
-## 
+## vite-vue3-basic
+
+项目地址：[vite-vue3-basic](https://github.com/zheng-yi-yi/Java-Web-learning/tree/main/code/school/unit1-Web-Development-Basics/Vite%E6%9E%84%E5%BB%BA%E7%9A%84Vue3%E4%BD%BF%E7%94%A8%E5%9F%BA%E7%A1%80%E9%A1%B9%E7%9B%AE/vite-vue3-basic)
+
+运行效果：
+
+![image-20231229105123118](images/Web-Development-Basics/image-20231229105123118.png)
+
