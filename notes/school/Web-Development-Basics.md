@@ -829,10 +829,10 @@ methods: {
    reverseMessage: function () {
       this.message = this.message.split('').reverse().join('');
    },
-      setUrl() {
-            this.url = 'http://www.wustwzx.com';
-            alert('已经设置了教学网站网址，可以访问啦...');
-      },
+   setUrl() {
+         this.url = 'http://www.wustwzx.com';
+         alert('已经设置了教学网站网址，可以访问啦...');
+   },
 },
 ```
 
