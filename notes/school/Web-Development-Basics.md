@@ -849,3 +849,35 @@ methods: {
    - `reverseMessage`方法用于将`message`属性中的字符串进行反转，这会触发视图更新。
    - `setUrl`方法用于设置`url`属性为`http://www.wustwzx.com`，并弹出一个提示框。
 
+看完单向绑定，我们再来看双向绑定是什么？
+
+双向绑定指的是将数据从模型`Model`同步到视图`View`的同时，也能将`View`绑定到`Model`上，即将用户的输入同步回模型。
+
+Vue 中的双向绑定是通过 `v-model` 指令实现的，主要用于表单元素，使用 `v-model` 可以在视图和模型之间实现简洁的双向绑定，而不需要显式地编写大量的事件监听器和数据更新逻辑。
+
+我们来看这个例子：
+
+```vue
+<template>
+   <div>
+      <!-- 单向绑定，用于展示数据 -->
+      <p>{{message}}</p>
+
+      <!-- 双向绑定：实现Model与View之间的双向绑定 -->
+      <p>双向绑定示例：<input v-model="message"></p>
+   </div>
+</template>
+
+<script>
+export default {
+   data() {
+      return {
+         message: 'Hello Vue!',
+      }
+   },
+}
+</script>
+```
+
+效果如下：
+
