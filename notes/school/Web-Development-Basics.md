@@ -761,12 +761,13 @@ Vue的原理在于通过组件化和响应式数据绑定，构建出整个应�
 举个例子：
 
 ```html
-![单向绑定](C:/Users/zhengyiyi/Desktop/单向绑定.gif)<template>
+<template>
     <div>
         <!-- 三种单向绑定的方式 -->
         <p>{{message}}</p>                     <!-- 插值 方式 -->
         <p v-text="message"></p>               <!-- v-text -->
-        <button v-on:click="setUrl">设置教学网站网址</button>&nbsp; <!-- 点击后调用setUrl方法来设置网址 -->
+        <p><button v-on:click="reverseMessage">逆转消息</button></p>    <!-- 测试逆转字符串的方法 -->
+        <button v-on:click="setUrl">设置教学网站网址</button>&nbsp;     <!-- 点击后调用setUrl方法来设置网址 -->
         <a v-bind:href="url">访问教学网站</a>   <!-- v-bind方式 -->
     </div>
 </template>
