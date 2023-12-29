@@ -42,6 +42,8 @@
 - [6. 前端框架 Elemet Plus](#6-前端框架-elemet-plus)
   - [6.1 Element Plus](#61-element-plus)
   - [6.2 常用组件（标签）](#62-常用组件标签)
+- [7. Java Web开发环境](#7-java-web开发环境)
+  - [Java EE规范概述](#java-ee规范概述)
 
 
 # 1. Web前端技术及其发展
@@ -1148,3 +1150,39 @@ app.mount('#app');
 **注意：**
 1. Vue双向绑定语法`v-model`在Element UI里简化为`:model`。
 2. 对于`this.$message.info()`，`this`指的是Vue实例，`$message`是Element UI提供的全局方法，`info()`是`$message`的一个具体方法。
+
+
+# 7. Java Web开发环境
+
+## Java EE规范概述
+
+Java EE（Java Platform, Enterprise Edition）是一套用于企业级应用开发的工业标准，基于Java语言，提供了一系列的技术规范，旨在加速设计、开发、装配及部署企业级应用程序。
+
+以下是Java EE规范中的一些关键概念和技术组成部分：
+
+1. **概念与性质：**
+   - Java EE并非一个产品，而是一系列的技术规范，为企业级开发提供了一致的标准。
+   - 不是一种编程语言，而是基于Java语言的规范集合。
+
+2. **Servlet：**
+   - Servlet是一种运行于Web服务器端的Java应用程序。
+   - 能够动态响应客户端请求，用于生成动态的Web页面。
+
+3. **JSP（Java Server Page）：**
+   - JSP技术是Java EE的组成部分，提供了处理用户请求的JSP内置对象。
+   - 支持JSTL标签和EL表达式等，用于简化在JSP页面中的Java编码。
+
+4. **JavaBean：**
+   - JavaBean是一些可移植、可重用的Java实体类。
+   - 可以组装到应用程序中，促进模块化和可维护性。
+
+5. **其他技术和规范：**
+   - **JPA（Java Persistence API）标准：** 用于实现Java对象与数据库之间的映射。
+   - **应用服务器：** 例如Tomcat、JBoss等，用于运行和管理Java EE应用。
+   - **应用程序框架：** 如Spring、Spring MVC、MyBatis、Hibernate等，提供了额外的功能和便利。
+
+6. **JBoss：**
+   - JBoss作为Java EE应用服务器，不仅是Servlet容器，还是EJB（Enterprise Java Beans）容器。
+   - 对Tomcat进行本地化，将Tomcat以内嵌的方式集成到JBoss中，提供更丰富的企业级功能。
+
+Java EE规范的使用有助于开发者构建可伸缩、可维护、安全可靠的企业级应用。各个技术规范的结合使用提供了全面的解决方案，从而满足了复杂企业级应用的需求。
