@@ -23,6 +23,7 @@
 - [4. 前端框架](#4-前端框架)
   - [4.1 Node.js与Vue.js概述](#41-nodejs与vuejs概述)
   - [4.2 关于Node](#42-关于node)
+  - [4.3 Node.js使用示例](#43-nodejs使用示例)
 
 
 # 1. Web前端技术及其发展
@@ -569,4 +570,39 @@ function getFilmInformation(idv) {
     ```
 
 以上命令会分别显示安装的`Node.js`版本、`npm`版本和`cnpm`版本（若已安装）。如果安装成功，会显示相应的版本号，证明`Node.js`已经正确添加到系统环境变量中，可以在任何路径下使用相关命令。
+
+## 4.3 Node.js使用示例
+
+下面是一个使用`Node.js`搭`建Web`服务器的示例，利用`Express`框架简化了`HTTP`服务器的搭建和路由处理。在这个示例中，我们创建一个简单的服务器，监听端口`3000`，并在根路由("`/`")上返回"`Hello World!`"。
+
+```js
+// 引入Express模块
+let express = require('express')
+
+// 创建Express实例
+let app = express()
+
+// 定义路由，处理根路径请求
+app.get('/', function (req, res) {
+    res.send('Hello World!')
+})
+
+// 配置服务器端口和主机
+const PORT = 3000
+const HOST = '127.0.0.1'
+
+// 启动HTTP服务器，监听指定端口和主机
+let server = app.listen(PORT, HOST, function() {
+    let host = server.address().address
+    let port = server.address().port
+    console.log('Example app listening at http://%s:%s', host, port)
+})
+
+// 输出一些提示信息
+console.log("Web服务器正在运行中...")
+console.log("请打开浏览器访问：http://localhost:3000")
+console.log("按Ctrl+C停止Web服务器，返回到命令行方式。")
+```
+
+使用该示例，你可以通过在终端中运行`node useExpress.js`来启动`Web`服务器。然后，可以在浏览器中访问`http://localhost:3000`，将看到输出的"`Hello World!`"。最后，通过按下`Ctrl+C`，可以停止`Web`服务器。这个示例展示了使用`Node.js`和`Express`框架快速创建简单`Web`服务器的过程。
 
