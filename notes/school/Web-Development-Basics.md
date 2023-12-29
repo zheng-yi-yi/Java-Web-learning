@@ -39,6 +39,9 @@
   - [main.js](#mainjs)
   - [MVVM.vue](#mvvmvue)
   - [axios.get()](#axiosget)
+- [6. 前端框架 Elemet Plus](#6-前端框架-elemet-plus)
+  - [6.1 Element Plus](#61-element-plus)
+  - [6.2 常用组件（标签）](#62-常用组件标签)
 
 
 # 1. Web前端技术及其发展
@@ -1051,3 +1054,95 @@ axios.get('api_url', {
 请根据实际情况替换 `'your_api_url'` 和请求参数，以及根据需要配置请求头。
 
 > 在Web项目前后端分离开发时，大量使用post请求且参数使用JSON格式。此时，不需要params。
+
+# 6. 前端框架 Elemet Plus
+
+> Element UI
+> 
+> - **UI框架特点：** Element UI是一种强大的UI框架，提供了众多与HTML相应的标签，用于美化页面元素并简化布局。
+> - **目的：** 旨在为Vue.js项目提供丰富的UI组件，提高开发效率并提供一致的用户界面。
+
+## 6.1 Element Plus
+
+安装Element Plus依赖
+
+为了在Vue项目中使用Element Plus框架，需要运行以下npm命令安装其依赖：
+
+```bash
+npm install element-plus
+```
+
+在main.js中配置
+
+为了确保不同组件能够方便使用Element Plus框架，需要在`main.js`文件中进行相应配置：
+
+```javascript
+// main.js
+
+// 引入Vue和Element Plus样式
+import { createApp } from 'vue'
+import ElementPlus from 'element-plus';
+import 'element-plus/lib/theme-chalk/index.css';
+
+// 创建Vue实例并使用Element Plus
+const app = createApp(App);
+app.use(ElementPlus);
+
+// ...其他配置
+
+// 挂载Vue实例
+app.mount('#app');
+```
+
+## 6.2 常用组件（标签）
+
+为了实现页面美化和布局的方便，Element UI提供了一系列的组件，这些组件的标签名均以`el-`打头。以下是一些常用的Element UI组件：
+
+1. **布局容器**
+   - `<el-container>`：整体布局容器
+   - `<el-header>`：页面头部容器
+   - `<el-aside>`：侧边栏容器
+   - `<el-main>`：主要内容区域
+   - `<el-footer>`：页面底部容器
+
+2. **菜单**
+   - `<el-menu>`：菜单容器
+   - `<el-menu-item>`：菜单项
+
+3. **表单**
+   - `<el-form>`：表单容器
+   - `<el-form-item>`：表单项
+   - `<el-input>`：输入框
+   - `<el-button>`：按钮
+
+4. **标签页（选项卡）**
+   - `<el-tabs>`：标签页容器
+   - `<el-tab-pane>`：标签页
+
+5. **对话框**
+   - `<el-dialog>`：对话框容器
+
+6. **超链接**
+   - `<el-link>`：超链接
+
+7. **表格**
+   - `<el-table>`：表格容器
+   - `<el-table-column>`：表格列
+
+8. **下拉列表**
+   - `<el-select>`：下拉列表容器
+   - `<el-option>`：下拉列表选项
+
+9. **确认框**
+   - `this.$confirm()`：确认框
+
+10. **消息框**
+    - `this.$message()`：消息框
+        - `this.$message.success()`：成功消息
+        - `this.$message.info()`：信息消息
+        - `this.$message.error()`：错误消息
+        - `this.$message.warning()`：警告消息
+
+**注意：**
+1. Vue双向绑定语法`v-model`在Element UI里简化为`:model`。
+2. 对于`this.$message.info()`，`this`指的是Vue实例，`$message`是Element UI提供的全局方法，`info()`是`$message`的一个具体方法。
