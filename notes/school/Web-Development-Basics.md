@@ -881,3 +881,4 @@ export default {
 
 效果如下：
 
+![双向绑定](images/Web-Development-Basics/双向绑定.gif)
