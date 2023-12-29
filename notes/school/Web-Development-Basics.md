@@ -43,7 +43,8 @@
   - [6.1 Element Plus](#61-element-plus)
   - [6.2 常用组件（标签）](#62-常用组件标签)
 - [7. Java Web开发环境](#7-java-web开发环境)
-  - [Java EE规范概述](#java-ee规范概述)
+  - [7.1 Java EE规范概述](#71-java-ee规范概述)
+  - [7.2 Maven](#72-maven)
 
 
 # 1. Web前端技术及其发展
@@ -1154,7 +1155,7 @@ app.mount('#app');
 
 # 7. Java Web开发环境
 
-## Java EE规范概述
+## 7.1 Java EE规范概述
 
 Java EE（Java Platform, Enterprise Edition）是一套用于企业级应用开发的工业标准，基于Java语言，提供了一系列的技术规范，旨在加速设计、开发、装配及部署企业级应用程序。
 
@@ -1186,3 +1187,34 @@ Java EE（Java Platform, Enterprise Edition）是一套用于企业级应用开�
    - 对Tomcat进行本地化，将Tomcat以内嵌的方式集成到JBoss中，提供更丰富的企业级功能。
 
 Java EE规范的使用有助于开发者构建可伸缩、可维护、安全可靠的企业级应用。各个技术规范的结合使用提供了全面的解决方案，从而满足了复杂企业级应用的需求。
+
+## 7.2 Maven
+
+**传统方式 vs Maven**：
+
+在传统的Java项目开发中，管理第三方jar包需要手工查找、复制，并配置系统环境变量ClassPath，可能导致繁琐和版本更新时的问题。相比之下，使用Maven可以更便捷地进行项目构建和依赖管理。
+
+**Maven概述**：
+
+- **定义：** Maven意为知识的积累，是由Maven团队维护的项目管理工具。
+- **远程仓库：** 存储了开源的jar包，地址为[http://www.mvnrepository.com](http://www.mvnrepository.com)。
+- **依赖坐标：** 通过依赖坐标，可以在Maven仓库中下载相应的jar包。
+
+**Maven的优势**：
+
+- **统一管理：** 可以统一管理项目的jar包依赖，使多个工程共享这些jar包。
+- **自动下载：** Maven会自动下载项目所依赖的其他jar包，并添加到项目的构建路径（Build Path）。
+- **pom.xml文件：** Maven项目都有一个`pom.xml`文件，通过它可以添加新的依赖，自动下载相应的jar包。
+
+**Maven的基本工作**：
+
+- **项目构建：** 包括项目清理、编译测试、生成报告、打包和部署等工作。
+- **依赖管理：** 自动下载和管理项目所需的第三方jar包。
+- **pom.xml文件：** Maven项目的核心配置文件，用于定义项目的结构、依赖和构建过程。
+
+**Maven与IDEA集成**：
+
+- **IDEA集成：** IDEA内置了Maven，可以通过Settings查看和配置。
+- **阿里云镜像站点：** 为获得较快的下载速度，可以使用国内的阿里云镜像站点，并将配置文件`settings.xml`复制到Windows用户的`.m2`文件夹。
+
+通过Maven，开发者可以更高效地进行Java项目的构建、依赖管理，以及打包部署等工作，提高了项目的可维护性和共享性。
