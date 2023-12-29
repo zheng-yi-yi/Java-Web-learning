@@ -934,6 +934,8 @@ export default {
 
 这段代码是一个基本的 `Vue` 组件，通过 axios 库进行异步请求获取豆瓣电影信息，并在页面上显示。
 
+![image-20231229150003467](images/Web-Development-Basics/image-20231229150003467.png)
+
 下面是对代码的解释：
 
 1. **导入 Axios 模块**:
